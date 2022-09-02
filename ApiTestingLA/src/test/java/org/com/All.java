@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class All {
-	@Test
+	@Test(enabled=false)
 private void Employee() throws InterruptedException {
 	RestAssured.baseURI="http://localhost:3000/";
 	Thread.sleep(3000);
@@ -49,5 +49,19 @@ private void Employee() throws InterruptedException {
 		System.out.println(response.asPrettyString());	
 		System.out.println(response.getStatusLine());	
 
+	}
+	@Test(enabled=false)
+	public void deleteAnEmployee() {
+		RestAssured.baseURI="http://localhost:3000/";
+		RequestSpecification  requestSpecification= RestAssured.given();
+		Response  response= requestSpecification.request(Method.DELETE,"employees/1");
+		System.out.println(response.asPrettyString());	
+	}
+	@Test
+	public void getAnEmployee() {
+		RestAssured.baseURI="http://localhost:3000/";
+		RequestSpecification  requestSpecification= RestAssured.given();
+		Response  response= requestSpecification.request(Method.GET,"employees/5");
+		System.out.println(response.asPrettyString());	
 	}
 }
