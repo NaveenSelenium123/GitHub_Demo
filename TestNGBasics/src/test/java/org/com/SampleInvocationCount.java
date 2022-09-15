@@ -12,7 +12,7 @@ public class SampleInvocationCount {
 	public void tc2() {
 		System.out.println("TC2---------------");
 	}
-	@Test(priority=-1,invocationCount=3)
+	@Test(priority=-1,invocationCount=176)
 	public void tc3() {
 		System.out.println("TC3---------------");
 	}

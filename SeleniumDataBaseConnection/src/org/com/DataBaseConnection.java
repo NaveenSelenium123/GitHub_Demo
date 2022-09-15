@@ -10,7 +10,7 @@ public class DataBaseConnection {
 public static void main(String[] args) throws ClassNotFoundException, SQLException {
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","system");
-	String s="select * from course";
+	String s="select * from student";
 	PreparedStatement prepareStatement = connection.prepareStatement(s);
 	ResultSet rs = prepareStatement.executeQuery();
 	while(rs.next()) {
